@@ -7,6 +7,36 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  Widget titleSection = Container(
+    padding: EdgeInsets.all(32),
+    child: Row(
+      children: [
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Text(
+                  'Oeschinen Lake Campground',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+              Text(
+                'Kandersteg, Switzerland',
+                style: TextStyle(color: Colors.grey[500]),
+              )
+            ],
+          ),
+        ),
+        Icon(
+          Icons.star,
+          color: Colors.red,
+        ),
+      ],
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,8 +45,10 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flutter layout demo'),
         ),
-        body: Center(
-          child: Text('Hello World'),
+        body: Column(
+          children: [
+            titleSection,
+          ],
         ),
       ),
     );
